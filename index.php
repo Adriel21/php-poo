@@ -20,8 +20,7 @@
 
     require_once "./src/Cliente.php";
 
-    $senhaa = "440adriel";
-    $senhaSegura = password_hash($senhaa, PASSWORD_DEFAULT);
+   
 
     //Criação dos objetos
     $clienteA = new Cliente;
