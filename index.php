@@ -7,46 +7,56 @@
     <title>Exemplo 3</title>
 </head>
 <body>
-    <h1>PHP POO - Exemplo 3</h1>
+    <h1>PHP POO - Exemplo 4</h1>
     <h2>Assuntos abordados:</h2>
     <ul>
-        <li>Acesso direto à propriedades</li>
-        <li>Atribuição de dados e leitura</li>
+        <li>Encapsulamento</li>
+        <li>Modificadores de visibilidade</li>
+        <li>Métodos de acesso: getters e setters</li>
     </ul>
 
 <?php 
 // Importando a classe
+
     require_once "./src/Cliente.php";
+
+    $senhaa = "440adriel";
+    $senhaSegura = password_hash($senhaa, PASSWORD_DEFAULT);
 
     //Criação dos objetos
     $clienteA = new Cliente;
     $clienteB = new Cliente;
 
-    // Atribuindo dados às propriedades do objeto
-    $clienteA->nome = 'Tiago';
-    $clienteA->email = 'tiago@gmail.com';
-    $clienteA->telefones = ['11-2135-0300, 11-97777-5555'];
-    
+    // Atribuindo dados via setters do objeto
+    $clienteA->setNome('Adriel');
+    $clienteB->setNome('Tiago');
 
-    $clienteB->nome = 'Bernardo';
-    $clienteB->email = 'bernardo@hotmail.com';
-    $clienteB->telefones = array('11-98888-4444');
+    $clienteA->setEmail('adrieldiasdossantoslira@hotmail.com');
+    $clienteB->setEmail('adrieldias2001@hotmail.com');
+
+    $clienteA->setSenha('bi');
+    $clienteB->setSenha('biloca');
+
+
+
 
     
 ?>
 
 <h2>Dados dos objetos (leitura)</h2>
-<h3><?=$clienteA->nome?></h3>
-<p>E-mail: <?=$clienteA->email?></p>
-<p>telefones: <?=implode(", ", $clienteA->telefones)?></p>
-<P>Senha: <?=$clienteA->senha?></P> <!--Quando o valor da propriedade não foi passado, ao ser inicializada, irá informar um erro fatal. Para evitar isso, podemos atribuir uma string vazia na atribuição de propriedades da classe, para que ela possa ser inicializada mesmo sem valor passado-->
-<h3><?=$clienteB->nome?></h3>
-<p>E-mail: <?=$clienteB->email?></p>
-<p>telefones: <?=implode(", ", $clienteB->telefones)?></p>
+<h3><?=$clienteA->getNome()?></h3>
+<p>E-mail: <?=$clienteA->getEmail()?></p>
+<p>Senha: <?=$clienteA->getSenha()?></p>
 
-<h2>Chamando método exibirDados</h2>
 
-<?php $clienteA->exibirDados(); ?>
+<h3><?=$clienteB->getNome()?></h3>
+<p>E-mail: <?=$clienteB->getEmail()?></p>
+<p>Senha: <?=$clienteB->getSenha()?></p>
+
+
+
+
+
 
 
 </body>
