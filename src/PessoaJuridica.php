@@ -1,6 +1,7 @@
 <?php
 require_once "Cliente.php";
-class PessoaJuridica extends Cliente {
+//Final class indica que a classe não permite herança
+final class PessoaJuridica extends Cliente {
     private string $cnpj;
     private int $anoFundacao;
     private string $nomeFantasia;

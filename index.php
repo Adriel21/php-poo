@@ -13,11 +13,13 @@
     <ul>
         <li>Herança</li>
         <li>Classe Abstrata (não pode ser instanciada)</li>
+        <li>Classe Final - Final Class</li>
     </ul>
 <?php
 // Importando a classe
 require_once "src/PessoaFisica.php"; // subclasse
-require_once "src/PessoaJuridica.php"; // subclasse
+// require_once "src/PessoaJuridica.php"; // subclasse
+require_once "src/Mei.php"; //subclasse
 
 $clientePF = new PessoaFisica;
 $clientePF->setNome('Tiago');
@@ -31,11 +33,15 @@ $clientePJ->setNome("Jon Oliva");
 $clientePJ->setCnpj("32.088.0001/000-41");
 $clientePJ->setNomeFantasia("Savatage");
 
-
+$clienteMEI = new MEI;
+$clienteMEI->SetNome("James Hetfield");
+$clienteMEI->SetNomeFantasia("Metallica");
+$clienteMEI->setCnpj("12.055.0001/000-42");
+$clienteMEI->setAreaDeAtuacao("Musica");
 
 ?>
 
-<pre> <?=var_dump($clientePF, $clientePJ)?> </pre>
+<pre> <?=var_dump($clientePF, $clientePJ, $clienteMEI)?> </pre>
 
 <?php $cliente = new Cliente; // erro, pois Cliente é abstrato ?>
 <pre> <?=var_dump($cliente)?> </pre>
