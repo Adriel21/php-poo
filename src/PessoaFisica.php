@@ -9,6 +9,12 @@ class PessoaFisica extends Cliente {
         $this->setSituacao("normal");
     }
 
+    public function exibirDados(){
+        echo "<h3>".$this->getNome()."</h3>";
+        echo "<p>Idade: ".$this->idade."</p>";
+        echo "<p>Situação: ".$this->getSituacao()."</p>";
+    }
+
     public function getCpf(): string
     {
         return $this->cpf;

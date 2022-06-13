@@ -7,20 +7,17 @@
     <title>Exemplo 5</title>
 </head>
 <body>
-    <h1>PHP POO - Exemplo 5</h1>
+    <h1>PHP POO - Exemplo 6</h1>
     <hr>
     <h2>Assuntos abordados:</h2>
     <ul>
-        <li>Herança</li>
-        <li>Classe Abstrata (não pode ser instanciada)</li>
-        <li>Classe Final - Final Class</li>
-        <li>Métodos protegidos (acessíveis apenas pelas subclasses</li>
+        <li>Polimorfismo</li>
     </ul>
 <?php
 // Importando a classe
 require_once "src/PessoaFisica.php"; // subclasse
-// require_once "src/PessoaJuridica.php"; // subclasse
-require_once "src/Mei.php"; //subclasse
+require_once "src/PessoaJuridica.php"; // subclasse
+
 
 $clientePF = new PessoaFisica;
 $clientePF->setNome('Tiago');
@@ -32,22 +29,24 @@ $clientePF->setIdade(38);
 $clientePJ = new PessoaJuridica;
 $clientePJ->setNome("Jon Oliva");
 $clientePJ->setCnpj("32.088.0001/000-41");
-$clientePJ->setNomeFantasia("Savatage");
 
-$clienteMEI = new MEI;
-$clienteMEI->SetNome("James Hetfield");
-$clienteMEI->SetNomeFantasia("Metallica");
-$clienteMEI->setCnpj("12.055.0001/000-42");
-$clienteMEI->setAreaDeAtuacao("Musica");
+
 
  //$clientePF->setSituacao("pendente");
  //$clientePF->getSituacao();
 ?>
+<h3>Pessoa Física</h3>
+<p> <?=$clientePF->getNome()?> </p>
 
-<pre> <?=var_dump($clientePF, $clientePJ, $clienteMEI)?> </pre>
+<h3>Pessoa Jurídica</h3>
+<p> <?=$clientePJ->getNome()?> </p>
 
-<?php $cliente = new Cliente; // erro, pois Cliente é abstrato ?>
-<pre> <?=var_dump($cliente)?> </pre>
+<hr>
+<section> <?=$clientePF->exibirDados()?> </section>
+<section> <?=$clientePJ->exibirDados()?> </section>
+
+<pre> <?=var_dump($clientePF, $clientePJ)?> </pre>
+
 
 </body>
 </html>
