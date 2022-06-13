@@ -14,6 +14,7 @@
         <li>Herança</li>
         <li>Classe Abstrata (não pode ser instanciada)</li>
         <li>Classe Final - Final Class</li>
+        <li>Métodos protegidos (acessíveis apenas pelas subclasses</li>
     </ul>
 <?php
 // Importando a classe
@@ -39,6 +40,8 @@ $clienteMEI->SetNomeFantasia("Metallica");
 $clienteMEI->setCnpj("12.055.0001/000-42");
 $clienteMEI->setAreaDeAtuacao("Musica");
 
+ //$clientePF->setSituacao("pendente");
+ //$clientePF->getSituacao();
 ?>
 
 <pre> <?=var_dump($clientePF, $clientePJ, $clienteMEI)?> </pre>
