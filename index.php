@@ -39,20 +39,20 @@ $livroDidatico->setNivel(['médio', 'superior']);
 
 <h2>Dados</h2>
 <h3>Técnico</h3>
-<p><?=$livroTecnico->getTitulo()?></p>
+<p><?=$livroTecnico->formataTitulo($livroTecnico->getTitulo())?></p> 
 <p><?=$livroTecnico->getAutor()?></p>
 <p><?=$livroTecnico->getPaginas()?></p>
 <p><?=$livroTecnico->getFormato()?></p>
 
 <h3>Programação</h3>
-<p><?=$livroProgramacao->getTitulo()?></p>
+<p><?=$livroProgramacao->formataTitulo()?></p>
 <p><?=$livroProgramacao->getAutor()?></p>
 <p><?=$livroProgramacao->getPaginas()?></p>
 <p><?=$livroProgramacao->getFormato()?></p>
 <p><?=$livroProgramacao->getArea()?></p>
 
 <h3>Didático</h3>
-<p><?=$livroDidatico->getTitulo()?></p>
+<p><?=$livroDidatico->formataTitulo()?></p>
 <p><?=$livroDidatico->getAutor()?></p>
 <p><?=$livroDidatico->getPaginas()?></p>
 <p><?=$livroDidatico->getFormato()?></p>
